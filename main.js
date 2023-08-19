@@ -1,30 +1,28 @@
 //Calculador de costo de un libro dependiendo del valor del IVA
 
-
-
 function calcularPrecioConIVA(precioSinIVA, porcentajeIVA) {
-    var precioConIVA = precioSinIVA + (precioSinIVA * (porcentajeIVA / 100));
+    let precioConIVA = precioSinIVA + (precioSinIVA * (porcentajeIVA / 100));
     return precioConIVA;
   }
   
-  var preciosSinIVA = [];
-  var porcentajesIVA = [];
-  var preciosConIVA = [];
+  let preciosSinIVA = [];
+  let porcentajesIVA = [];
+  let preciosConIVA = [];
   
-  var continuar = true;
+  let continuar = true;
   
   while (continuar) {
-    var precioSinIVA = parseFloat(prompt("Ingresa el precio del libro sin IVA:"));
-    var porcentajeIVA = parseFloat(prompt("Ingresa el porcentaje de IVA:"));
+    let precioSinIVA = parseFloat(prompt("Ingresa el precio del libro sin IVA:"));
+    let porcentajeIVA = parseFloat(prompt("Ingresa el porcentaje de IVA:"));
   
     preciosSinIVA.push(precioSinIVA);
     porcentajesIVA.push(porcentajeIVA);
   
-    var precioConIVA = calcularPrecioConIVA(precioSinIVA, porcentajeIVA);
+    let precioConIVA = calcularPrecioConIVA(precioSinIVA, porcentajeIVA);
     preciosConIVA.push(precioConIVA);
   
-    var respuesta = prompt("¿Deseas ingresar otro precio? (s/n)");
-    if (respuesta === "n") {
+    let respuesta = prompt("¿Deseas ingresar otro precio? (si/no)");
+    if (respuesta === "no") {
       continuar = false;
     }
   }
@@ -33,6 +31,6 @@ function calcularPrecioConIVA(precioSinIVA, porcentajeIVA) {
   //console.log("Porcentajes de IVA: " + porcentajesIVA);
   //console.log("Precios con IVA: " + preciosConIVA);
 
-  alert("Precios sin IVA: " + preciosSinIVA);
-  alert("Porcentajes de IVA: " + porcentajesIVA);
+  // alert("Precios sin IVA: " + preciosSinIVA);
+  // alert("Porcentajes de IVA: " + porcentajesIVA);
   alert("Precios con IVA: " + preciosConIVA);
